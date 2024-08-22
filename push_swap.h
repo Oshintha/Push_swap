@@ -20,14 +20,15 @@
 
 typedef struct s_stack_node
 {
-    int                     nbr;
+    int                     value;
     int                     index;
+    int                     final index;
     int                     push_cost;
     bool                    above_median;
     bool                    cheapest;
     struct  s_stack_node    *target_node;
     struct  s_stack_node    *next;
     struct  s_stack_node    *prev;    
-}    t_stck_node;
+}   t_stck_node;
 
 #endif
