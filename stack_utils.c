@@ -12,7 +12,22 @@
 
 #include "push_swap.h"
 
-t_stack_node    *find_last_node(t_stack_node *head)
+int	stack_len(t_stack_node *stack)
+{
+	int	count;
+
+	if (NULL == stack)
+		return (0);
+	count = 0;
+	while (stack)
+	{
+		++count;
+		stack = stack->next;
+	}
+	return (count);
+}
+
+t_stack_node    *find_last(t_stack_node *head)
 {
     if (head == NULL)
         return (NULL);
@@ -21,32 +36,20 @@ t_stack_node    *find_last_node(t_stack_node *head)
     return (head);
 }
 
-void    append_node(t_stack_node **stack, int nbr)
+bool	stack_sorted(t_stack_node *stack)
 {
-    t_stack_node    *node;
-    t_stack_node    *last_node;
-
-    if (stack == NULL)
-        return;
-    node = malloc(sizeof(t_stack_node));
-    if (node == NULL)
-        return;
-    node->next = NULL;
-    node->value = nbr;
-    if (*stack == NULL)
-    {
-        *stack = node;
-        node->prev = NULL;
-    }
-    else
-    {
-        last_node = find_last_node(*stack);
-        last_node->next = node;
-        node->prev = last_node;
-    }
+	if (NULL == stack)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
 }
 
-t_stack_node    *find_smallest(t_stack_node *stack)
+t_stack_node    *find_min(t_stack_node *stack)
 {
     long            smallest;
     t_stack_node    *smallest_node;
@@ -66,30 +69,24 @@ t_stack_node    *find_smallest(t_stack_node *stack)
     return (smallest_node);
 }
 
-t_stack_node	*return_cheapest(t_stack_node *stack)
+static t_stack_node	*find_max(t_stack_node *stack)
 {
+	int				highest;
+	t_stack_node	*highest_node;
+
 	if (NULL == stack)
 		return (NULL);
+	highest = INT_MIN;
 	while (stack)
 	{
-		if (stack->cheapest)
-			return (stack);
+		if (stack->nbr > highest)
+		{
+			highest = stack->nbr;
+			highest_node = stack;
+		}
 		stack = stack->next;
 	}
-	return (NULL);
+	return (highest_node);
 }
 
-int	stack_len(t_stack_node *stack)
-{
-	int	count;
 
-	if (NULL == stack)
-		return (0);
-	count = 0;
-	while (stack)
-	{
-		++count;
-		stack = stack->next;
-	}
-	return (count);
-}

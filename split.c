@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-static int	count_words(char *s, char c)
+static size_t   count_words(char *s, char c)
 {
-	int	count;
-	int	i;
+	size_t	count;
+	size_t	i;
 
 	count = 0;
 	i = 0;
@@ -35,7 +35,7 @@ static int	count_words(char *s, char c)
 
 static char *get_next_word(char *s, char c)
 {
-    static int  cursor = 0;
+    static int  cursor;
     char        *next_word;
     int         len;
     int         i;
@@ -57,7 +57,7 @@ static char *get_next_word(char *s, char c)
 
 char	**split(char *s, char c)
 {
-	int     word_count;
+	size_t  word_count;
     char	**array;
 	int     i;
 

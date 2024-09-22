@@ -23,7 +23,7 @@ int main(int ac, char **av)
         return (1);
     else if (ac == 2)
         av = split(av[1], ' ');
-    init_stack_a(&a, av + 1);
+    int_stack_a(&a, av + 1);
     if (!stack_sorted(a))
     {
         if (stack_len(a) == 2)
