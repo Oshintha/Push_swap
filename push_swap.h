@@ -32,48 +32,46 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }	 t_stack_node;	
 
-//*** Handle input ./push_swap "1 -42 1337" ***
-char			**ft_split(char *str, char separator);
-
-//*** Handle errors-free ***
-void			free_matrix(char **argv);
-void			error_free(t_stack_node **a, char **argv, bool flag_argc_2);
+//***Handle errors
+int				error_syntax(char *str_n); 
+int				error_duplicate(t_stack_node *a, int n);
 void			free_stack(t_stack_node **stack);
-int				error_repetition(t_stack_node *a, int nbr);
-int				error_syntax(char *str_nbr);
+void			free_errors(t_stack_node **a);
 
-//*** Stack creation ***
-void			stack_init(t_stack_node **a, char **argv, bool flag_argc_2);
-void			init_nodes(t_stack_node *a, t_stack_node *b);
-void			set_current_position(t_stack_node *stack);
-void			set_price(t_stack_node *a, t_stack_node *b);
-void			set_cheapest(t_stack_node *b);
+//***Stack initiation
+void			init_stack_a(t_stack_node **a, char **argv);
+char			**split(char *s, char c);
 
-//*** linked list utils ***
-void			append_node(t_stack_node **stack, int nbr);
-t_stack_node	*find_last_node(t_stack_node *head);
-t_stack_node	*find_smallest(t_stack_node *stack);
-t_stack_node	*return_cheapest(t_stack_node *stack);
-bool			stack_sorted(t_stack_node *stack);
+//***Nodes initiation
+void			init_nodes_a(t_stack_node *a, t_stack_node *b);
+void			init_nodes_b(t_stack_node *a, t_stack_node *b);
+void			current_index(t_stack_node *stack);
+void			set_cheapest(t_stack_node *stack);
+t_stack_node	*get_cheapest(t_stack_node *stack);
+void			prep_for_push(t_stack_node **s, t_stack_node *n, char c);
+
+//***Stack utils
 int				stack_len(t_stack_node *stack);
-void			finish_rotation(t_stack_node **s, t_stack_node *n, char c);
+t_stack_node	*find_last(t_stack_node *stack);
+bool			stack_sorted(t_stack_node *stack);
+t_stack_node	*find_min(t_stack_node *stack);
+t_stack_node	*find_max(t_stack_node *stack);
 
-//*** Algorithms ***
-void			tiny_sort(t_stack_node **a);
-void			handle_five(t_stack_node **a, t_stack_node **b);
-void			push_swap(t_stack_node **a, t_stack_node **b);
+//***Commands
+void			sa(t_stack_node **a, bool print);
+void			sb(t_stack_node **b, bool print);
+void			ss(t_stack_node **a, t_stack_node **b, bool print);
+void			ra(t_stack_node **a, bool print);
+void			rb(t_stack_node **b, bool print);
+void			rr(t_stack_node **a, t_stack_node **b, bool print);
+void			rra(t_stack_node **a, bool print);
+void			rrb(t_stack_node **b, bool print);
+void			rrr(t_stack_node **a, t_stack_node **b, bool print);
+void			pa(t_stack_node **a, t_stack_node **b, bool print);
+void			pb(t_stack_node **b, t_stack_node **a, bool print);
 
-//*** Commands ***
-void			sa(t_stack_node **a, bool checker);
-void			sb(t_stack_node **b, bool checker);
-void			ss(t_stack_node **a, t_stack_node **b, bool checker);
-void			ra(t_stack_node **a, bool checker);
-void			rb(t_stack_node **b, bool checker);
-void			rr(t_stack_node **a, t_stack_node **b, bool checker);
-void			rra(t_stack_node **a, bool checker);
-void			rrb(t_stack_node **b, bool checker);
-void			rrr(t_stack_node **a, t_stack_node **b, bool checker);
-void			pa(t_stack_node **a, t_stack_node **b, bool checker);
-void			pb(t_stack_node **b, t_stack_node **a, bool checker);
+//***Algorithm
+void			sort_three(t_stack_node **a);
+void			sort_stacks(t_stack_node **a, t_stack_node **b);
 
 #endif
