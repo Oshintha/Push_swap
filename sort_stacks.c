@@ -6,7 +6,7 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:29:11 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/09/20 14:29:11 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/09/27 11:44:30 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ static void	rev_rotate_both(t_stack_node **a,
 }
 
 static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
-	t_stack_node	*cheapest_node;
 {
+	t_stack_node	*cheapest_node;
+	
 	cheapest_node = get_cheapest(*a); 
 	if (cheapest_node->above_median 
 		&& cheapest_node->target_node->above_median)

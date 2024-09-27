@@ -6,7 +6,7 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 16:11:35 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/07/26 16:19:26 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/09/27 11:43:33 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int main(int ac, char **av)
 {
-    t_stck_node *a;
-    t_stck_node *b;
+    t_stack_node *a;
+    t_stack_node *b;
 
     a = NULL;
     b = NULL;

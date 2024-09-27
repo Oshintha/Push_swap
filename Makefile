@@ -6,40 +6,43 @@
 #    By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/26 16:11:20 by aoshinth          #+#    #+#              #
-#    Updated: 2024/08/26 16:11:20 by aoshinth         ###   ########.fr        #
+#    Updated: 2024/09/27 11:42:31 by aoshinth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-ARCHIVE = push_swap.a
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g -O2 
-MAKE_LIB = ar -rcs
+BNAME = checker
+SRCS = \
+	push_swap.c handle_errors.c push.c swap.c rotate.c rev_rotate.c \
+	init_a_to_b.c init_b_to_a.c sort_stacks.c sort_three.c split.c \
+	stack_int.c stack_utils.c swap.c
 
-SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 
-all : $(NAME)
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+LIBFT = ./libft/libft.a
 
-$(NAME) : $(ARCHIVE)
-	$(CC) $< -o $@
+all: $(NAME)
 
-$(ARCHIVE) : $(OBJS)
-	$(MAKE_LIB) $(ARCHIVE) $^
+%.o: %.c
+	@$(CC) -c $(CFLAGS) $?
 
-%.o : %.c 
-	$(CC) $(CFLAGS) -c $< -o $@ 
+$(NAME): $(OBJS) $(LIBFT)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
-bonus : 
-	cd ../checker && make
-	
-clean :
-	rm -f $(OBJS) $(ARCHIVE)
 
-fclean : clean
-	rm -f $(NAME)
-	cd ../checker && make fclean
+$(LIBFT):
+	@make -C libft
 
-re : fclean all
+clean:
+	@rm -fr $(OBJS) $(BOBJS)
+	@make clean -C libft
 
-.PHONY : all clean fclea re
+fclean: clean
+	@rm -f $(NAME) $(BNAME)
+	@make fclean -C libft
+		
+re: fclean all
+
+.PHONY: all clean fclean re
