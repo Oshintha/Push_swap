@@ -6,7 +6,7 @@
 #    By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/26 17:21:53 by aoshinth          #+#    #+#              #
-#    Updated: 2024/07/26 14:31:05 by aoshinth         ###   ########.fr        #
+#    Updated: 2024/09/27 14:57:50 by aoshinth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SOURCES = \
 	ft_putendl_fd.c ft_putnbr_fd.c \
 	ft_printf.c print_pointer.c print_unsigned.c print_string.c print_int.c \
 	print_char.c print_hex.c \
-	get_next_line.c get_next_line_utils.c  \
+	get_next_line.c get_next_line_utils.c
 BSOURCES = \
 	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c \
 	ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c

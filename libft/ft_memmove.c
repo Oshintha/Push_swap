@@ -6,11 +6,11 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:07:07 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/07/26 14:55:50 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/09/27 13:44:23 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

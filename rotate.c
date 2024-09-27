@@ -6,7 +6,7 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:38:28 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/09/27 10:55:33 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/09/27 14:35:20 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	rotate(t_stack_node **stack)
 	len = stack_len(*stack);
 	if (NULL == stack || NULL == *stack || 1 == len)
 		return ;
-	last_node = find_last_node(*stack);
+	last_node = find_last(*stack);
 	last_node->next = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;

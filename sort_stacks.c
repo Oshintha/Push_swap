@@ -6,43 +6,21 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 14:29:11 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/09/27 11:44:30 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/09/27 16:08:31 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate_both(t_stack_node **a,
-						t_stack_node **b,
-						t_stack_node *cheapest_node)
-{
-	while (*b != cheapest_node->target_node
-		&& *a != cheapest_node)
-		rr(a, b, false);
-	current_index(*a);
-	current_index(*b);
-}
-
-static void	rev_rotate_both(t_stack_node **a,
-								t_stack_node **b,
-								t_stack_node *cheapest_node)
-{
-	while (*b != cheapest_node->target_node
-		&& *a != cheapest_node)
-		rrr(a, b, false);
-	current_index(*a);
-	current_index(*b);
-}
-
-static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
+void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*cheapest_node;
-	
-	cheapest_node = get_cheapest(*a); 
-	if (cheapest_node->above_median 
+
+	cheapest_node = get_cheapest(*a);
+	if (cheapest_node->above_median
 		&& cheapest_node->target_node->above_median)
 		rotate_both(a, b, cheapest_node);
-	else if (!(cheapest_node->above_median) 
+	else if (!(cheapest_node->above_median)
 		&& !(cheapest_node->target_node->above_median))
 		rev_rotate_both(a, b, cheapest_node);
 	prep_for_push(a, cheapest_node, 'a');
@@ -53,7 +31,7 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 {
 	prep_for_push(a, (*b)->target_node, 'a');
-	pa(a, b, false); 
+	pa(a, b, false);
 }
 
 static void	min_on_top(t_stack_node **a)

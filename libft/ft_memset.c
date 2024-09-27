@@ -6,11 +6,11 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 11:35:20 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/07/26 14:55:47 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/09/27 13:44:16 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

@@ -6,7 +6,7 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:22:15 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/07/26 14:54:29 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/09/27 14:00:44 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1) - 1;
 	if (start > end)
 		return (ft_strdup(s1 + end + 1));
-	while (ft_strchr(set, s1[end]) && end >= 0)
+	while (ft_strchr(set, s1[end]))
 		end--;
 	str = (char *)malloc(sizeof(char) * (end - start + 2));
 	if (!str)

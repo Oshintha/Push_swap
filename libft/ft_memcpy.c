@@ -6,11 +6,11 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 21:38:59 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/07/26 14:55:54 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/09/27 13:44:44 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

@@ -6,13 +6,12 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 10:22:35 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/07/26 16:10:42 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/09/27 16:14:37 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUSH_SAWP_H
-
+# define PUSH_SWAP_H
 # include <stdlib.h>
 # include <limits.h>
 # include <stdbool.h>
@@ -30,16 +29,16 @@ typedef struct s_stack_node
 	struct s_stack_node	*target_node;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
-}	 t_stack_node;	
+}t_stack_node;	
 
 //***Handle errors
-int				error_syntax(char *str_n); 
+int				error_syntax(char *str_n);
 int				error_duplicate(t_stack_node *a, int n);
 void			free_stack(t_stack_node **stack);
 void			free_errors(t_stack_node **a);
 
 //***Stack initiation
-void			init_stack_a(t_stack_node **a, char **argv);
+void			init_stack_a(t_stack_node **a, char **av);
 char			**split(char *s, char c);
 
 //***Nodes initiation
@@ -73,5 +72,8 @@ void			pb(t_stack_node **b, t_stack_node **a, bool print);
 //***Algorithm
 void			sort_three(t_stack_node **a);
 void			sort_stacks(t_stack_node **a, t_stack_node **b);
-
+void			rotate_both(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheapest_node);
+void			rev_rotate_both(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheapest_node);
 #endif

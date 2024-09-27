@@ -6,7 +6,7 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 14:02:16 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/07/26 14:54:33 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/09/27 16:32:42 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-
