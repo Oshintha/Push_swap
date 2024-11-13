@@ -6,7 +6,7 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:00:51 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/09/27 16:28:33 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/11/13 08:24:21 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ static void	append_node(t_stack_node **stack, int n)
 		return ;
 	node->next = NULL;
 	node->nbr = n;
+	node->cheapest = 0;
 	if (*stack == NULL)
 	{
 		*stack = node;
