@@ -6,7 +6,7 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 15:25:13 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/11/22 15:18:03 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/11/22 18:20:19 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,28 +61,28 @@ static char	*get_next_word(char *str, char separator)
 char	**split(char *str, char separator)
 {
 	int		words_number;
-	char	**vector_strings;
+	char	**result_strings;
 	int		i;
 
 	i = 0;
 	words_number = count_words(str, separator);
 	if (!words_number)
-		write(2, "Error\n", 6);
-	vector_strings = malloc(sizeof(char *) * (size_t)(words_number + 2));
-	if (NULL == vector_strings)
+		error ();
+	result_strings = malloc(sizeof(char *) * (size_t)(words_number + 2));
+	if (NULL == result_strings)
 		return (NULL);
 	while (words_number-- >= 0)
 	{
 		if (0 == i)
 		{
-			vector_strings[i] = malloc(sizeof(char));
-			if (NULL == vector_strings[i])
+			result_strings[i] = malloc(sizeof(char));
+			if (!result_strings[i])
 				return (NULL);
-			vector_strings[i++][0] = '\0';
+			result_strings[i++][0] = '\0';
 			continue ;
 		}
-		vector_strings[i++] = get_next_word(str, separator);
+		result_strings[i++] = get_next_word(str, separator);
 	}
-	vector_strings[i] = NULL;
-	return (vector_strings);
+	result_strings[i] = NULL;
+	return (result_strings);
 }
