@@ -6,7 +6,7 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 15:25:13 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/11/12 19:49:26 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/11/22 15:18:03 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	**split(char *str, char separator)
 	i = 0;
 	words_number = count_words(str, separator);
 	if (!words_number)
-		exit(1);
+		write(2, "Error\n", 6);
 	vector_strings = malloc(sizeof(char *) * (size_t)(words_number + 2));
 	if (NULL == vector_strings)
 		return (NULL);
