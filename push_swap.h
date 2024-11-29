@@ -6,7 +6,7 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 10:22:35 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/11/22 16:34:55 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/11/29 18:55:37 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,12 @@ int				error_duplicate(t_stack_node *a, int n);
 void			free_stack(t_stack_node **stack);
 void			free_errors(t_stack_node **a);
 void			error(void);
+void			split_free(char **str);
 
 void			init_stack_a(t_stack_node **a, char **av);
 char			**split(char *s, char c);
+int				initialize_stack(int ac, char **av, t_stack_node **a, char ***numbers);
+void			process_stack(t_stack_node **a, t_stack_node **b, char **numbers);
 
 void			init_nodes_a(t_stack_node *a, t_stack_node *b);
 void			init_nodes_b(t_stack_node *a, t_stack_node *b);

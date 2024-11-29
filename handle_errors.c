@@ -6,7 +6,7 @@
 /*   By: aoshinth <aoshinth@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 09:57:41 by aoshinth          #+#    #+#             */
-/*   Updated: 2024/11/22 16:52:35 by aoshinth         ###   ########.fr       */
+/*   Updated: 2024/11/29 18:41:29 by aoshinth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	free_errors(t_stack_node **a)
 {
 	free_stack(a);
 	write(2, "Error\n", 6);
-	exit(1);
+	return ;
 }
 
 void	error(void)
